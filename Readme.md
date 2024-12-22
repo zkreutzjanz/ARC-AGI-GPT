@@ -87,8 +87,12 @@ This project automates the process of testing solutions for ARC (Abstraction and
      )
      ```
 
-4. **Run the Script:**
+4. **Run the Scripts:**
    - Execute the main script:
+     ```bash
+     python main.py
+     ```
+ - Execute the main script:
      ```bash
      python test.py
      ```
