@@ -92,7 +92,7 @@ This project automates the process of testing solutions for ARC (Abstraction and
      ```bash
      python main.py
      ```
- - Execute the main script:
+   - Execute the test script: (this will log results to gpt_responses_with_validation.txt)
      ```bash
      python test.py
      ```
