@@ -78,12 +78,10 @@ This project automates the process of testing solutions for ARC (Abstraction and
      ```
 
 3. **Configure the Model:**
-   - The script currently uses the `gpt-4` model.
-   - If you want to use a different model (e.g., `gpt-3.5-turbo`), change the line in the script:
+   - The script currently uses the `o3-mini-2024-12-17` model.
+   - If you want to use a different model (e.g., `gpt-3.5-turbo`), change the line in the test.py script:
      ```python
-     response = client.chat.completions.create(
-         model="gpt-4",  # Change this to your desired model
-     )
+     model = "o3-mini-2024-12-17"
      ```
 
 4. **Run the Scripts:**

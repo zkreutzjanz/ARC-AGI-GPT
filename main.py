@@ -4,6 +4,9 @@ from os.path import isfile, join
 
 emojis = ['⬛️', '🟦', '🟥', '🟩', '🟨', '⬜️', '🟪', '🟧', '🔷', '🟫']
 
+if not os.path.exists("printed"):
+    os.makedirs("printed")
+
 
 def strize(nums, trans=True):
     ret = ""
@@ -143,6 +146,24 @@ def print_task3(fn, trans=True):
         outstr += "input = "
         outstr += emojize(item['input'], trans) + "\n"
     outstr += "Apply the same rules to this unsolved problem and present a depiction of the solution.\n"
+    outstr += "Present your solution as a Python list of lists where:\n"
+    outstr += "1. Each inner list represents one row of the grid\n"
+    outstr += "2. Each element in the lists must be an emoji\n"
+    outstr += "3. The grid must have exactly the same dimensions as the example outputs\n"
+    outstr += "4. Format your solution exactly like this example:\n\n"
+    outstr += "[[⬛️, 🟦, 🟦],\n"
+    outstr += " [🟥, 🟥, ⬛️],\n"
+    outstr += " [⬛️, 🟦, 🟦]]\n\n"
+    
+    # Add example dimensions to make it clearer
+    for index, item in enumerate(data['train']):
+        input_grid = item['input']
+        output_grid = item['output']
+        outstr += f"Note: Example {index}'s output grid is {len(output_grid)}x{len(output_grid[0])} - "
+        outstr += f"your solution must also be {len(output_grid)}x{len(output_grid[0])}\n"
+    
+    outstr += "\nYour solution (as a Python list of lists):\n"
+    
     of = "printed/" + fn + "_task3.txt"
     with open(of, "w") as f:
         f.write(outstr)
